@@ -1,11 +1,158 @@
 <!DOCTYPE html>
+<!-- how to make Responsive card using html css -->
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+      /* Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f8e8e8;
+  }
+
+  .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 100px 50px;
+      padding: 100px 50px;
+  }
+
+  .container .custom-card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 350px;
+      max-width: 100%;
+      height: 310px;
+      background: #f9f4f4;
+      border-radius: 20px;
+      transition: 0.5s;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.2);
+  }
+
+  .container .custom-card:hover {
+      height: 350px;
+  }
+
+  .container .custom-card .img-box {
+      position: absolute;
+      top: 20px;
+      width: 300px;
+      height: 220px;
+      background: #333;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.5s;
+  }
+
+  .container .custom-card:hover .img-box {
+      top: -100px;
+      scale: 0.75;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  }
+
+  .container .custom-card .img-box img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .container .custom-card .custom-content {
+      position: absolute;
+      top: 252px;
+      width: 100%;
+      height: 35px;
+      padding: 0 30px;
+      text-align: center;
+      overflow: hidden;
+      transition: 0.5s;
+  }
+
+  .container .custom-card:hover .custom-content {
+      top: 130px;
+      height: 200px;
+  }
+
+  .container .custom-card .custom-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3e3e3e;
+  }
+
+  .container .custom-card .custom-content p {
+      color: #333;
+  }
+
+  .container .custom-card .custom-content a {
+      position: relative;
+      top: 15px;
+      display: inline-block;
+      padding: 12px 25px;
+      text-decoration: none;
+      background: #181818;
+      color: #fff;
+      font-weight: 500;
+  }
+
+  .container .custom-card .custom-content a:hover {
+      opacity: 0.8;
+  }
+
+  @media (max-width: 480px) {
+      .container .custom-card {
+          width: 305px;
+          border-radius: 15px;
+      }
+
+      .container .custom-card .img-box {
+          width: 185px;
+          border-radius: 13px;
+      }
+
+      .container .custom-card .custom-content p {
+          font-size: 0.8rem;
+      }
+
+      .container .custom-card .custom-content a {
+          font-size: 0.9rem;
+      }
+  }
+    </style>
 </head>
+
 <body>
-  <h1>ddw></h1>
+  <div class="container">
+    <div class="custom-card">
+      <p>Tap On Panda</p>
+      <div class="img-box"><img src="https://pic.chinesefontdesign.com/uploads/2017/08/chinesefontdesign.com-2017-08-13_10-51-09_303125.gif"></div>
+      <div class="custom-content">
+        <h2>Happy Birthday</h2>
+        <p>On Your Birthday You Got A Special giftt🫗.Click On The Open Gift Button To Claim Your Gift Somuuu </p>
+        <a href="https://developervansh01.github.io/Somuuu/gift2.">Open Gift</a>
+    </div>
+  </div>
 </body>
 </html>
