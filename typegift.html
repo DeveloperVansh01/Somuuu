@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8 ">
+  <title>Somuu</title>
+  <style>
+    * {
+	box-sizing: border-box;
+	font-family: "Tahoma", sans-serif;
+	line-height: 1;
+}
+body {
+	max-width: 78%;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right, rgb(5, 231, 157), rgb(83, 192, 251));
+}
+.container {
+	max-width: 100vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding-top: 40px;
+	padding-bottom: 40px;
+    left: 60px;
+}
+.form-container {
+	display: flex;
+	justify-content: center;
+	flex-flow: wrap;
+	background-color: #fff;
+	width: 400px;
+	padding: 60px 60px 140px;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+	position: relative;
+}
+.form-line {
+	width: 100%;
+	display: block;
+	position: relative;
+	transition: .3s all ease;
+	padding-top: 10px;
+}
+.form-line + .form-line {
+	margin-top: 30px;
+}
+.form-line label {
+	display: block;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	font-size: 14px;
+	color: #ccc;
+	transition: .3s all ease;
+	z-index: 1;
+}
+.form-input {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 10px;
+	font-size: 16px;
+	color: #000;
+	outline: none;
+	position: relative;
+	z-index: 2;
+	background-color: transparent;
+	transition: .3s all ease;
+	width: 100%;
+}
+textarea.form-input {
+	resize: vertical;
+}
+.form-input:focus + label, 
+.form-line label.top {
+	font-size: 10px;
+	top: -10px;
+	color: #2f4231;
+}
+.form-input:focus {
+	border-bottom-color: #2f4231;
+}
+.error-label,
+.check-label {
+	font-size: 10px;
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	color: #fff;
+	padding: 3px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s all ease;
+	border-radius: 2px;
+}
+.error-label {
+	background-color: #f75e5e;
+}
+.check-label {
+	background-color: #35ca7c;
+	width: 16px;
+	height: 16px;
+}
+.check-label:after,
+.check-label:before {
+	position: absolute;
+	content: '';
+	background-color: #fff;
+	height: 2px;
+}
+.check-label:after {
+	width: 5px;
+	transform: rotate(20deg);
+	bottom: 4px;
+	left: 4px;
+}
+.check-label:before {
+	width: 10px;
+	transform: rotate(110deg);
+	right: 1px;
+	top: 7px;
+}
+
+.form-line.success .form-input {
+	border-bottom-color: #35ca7c;
+}
+.form-line.error label {
+	color: #f75e5e;
+}
+.form-line.error .form-input {
+	color: #4e0c0c;
+	border-bottom-color: #f75e5e;
+}
+.form-line.error .error-label,
+.form-line.success .check-label {
+	opacity: 1;
+	visibility: visible;
+}
+
+.headline {
+	display: block;
+	text-align: center;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+	letter-spacing: 5px;
+	position: relative;
+}
+.headline span {
+	position: relative;
+	z-index: 2;
+}
+.headline:before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	background-color: rgba(175, 253, 198, 0.5);
+	height: 12px;
+	width: 155px;
+	bottom: -3px;
+	left: 5px;
+}
+
+.form-button {
+	border: none;
+	outline: none;
+	padding: 20px 60px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	color: #000;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #8cf1d0;
+	display: block;
+	transition: .3s all ease;
+	position: absolute;
+	bottom: 40px;
+	letter-spacing: 2px;
+}
+.form-button:hover {
+	background-color: #78e6c2;
+	-webkit-box-shadow: 0px 10px 25px 0px rgba(72,72,72,0.1);
+	-moz-box-shadow: 0px 10px 25px 0px rgba(72,72,72,0.1);
+	box-shadow: 0px 10px 25px 0px rgba(72,72,72,0.1);
+	bottom: 45px;
+}
+
+@media (max-width: 500px) {
+	.form-container {
+		width: 300px;
+		padding: 30px 20px 100px;
+	}
+	.form-button {
+		bottom: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	}
+	.form-button:hover {
+		bottom: 30px;
+	}
+}
+.text1 {
+    position: relative;
+    top: -240px;
+    left: 100px;
+    font-size: 19px;
+}
+.msgg {
+    font-family: sans-serif;
+    position: relative;
+    top: -25px;
+    left: -25px;
+}
+.break {
+    position: relative;
+    top: -40px;
+    left: 40px;
+}
+.nex {
+    position: absolute;
+    top: 25px;
+    left: 75px;
+    width: 120px;
+    height: 40px;
+    background: #8cf1d0;
+    box-shadow: 0 0 10px 0 #8cf1d0 ;
+}
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <form class="form-container" action="https://formspree.io/f/xvoedqda" method="POST">
+      <div class="headline"><span>Wishes</span></div>
+      <div class="form-line success">
+        <input name="nam1" type="text" class="form-input" value="Somuu">
+        <label class="top">Name</label>
+        <div class="check-label"></div>
+      </div>
+      <div class="form-line">
+        <textarea name="message" class="form-input" required></textarea>
+        <label>Message</label>
+        <div class="check-label"></div>
+        <div class="error-label">Field is required!</div>
+      </div>
+      <a href="https://developervansh01.github.io/Somuuu/msgg.html" target="_blank"></a>
+      <button type="submit" class="form-button" value="Submit" >Send</button>
+    </form>
+  </div>
+  <div class="text1">
+    <p class="msgg">After You Have Sended Your Wish</p>
+    <span class="break">Click On Next Button</span>
+    <a href="https://developervansh01.github.io/Somuuu/msgg.html" target="_blank">    <button class="nex">NEXT</button> </a>
+  </div>
+  <script>
+    $(document).ready(function(){
+	$('.form-input').on('keyup, paste, cut, focusout', function(){
+		var $parent = $(this).parents('.form-line');
+		var input_value = $.trim($(this).val());
+		var required = $(this).is(':required');
+
+		if (input_value.length > 0) {
+			$parent.find('label').addClass('top');
+
+			$parent
+				.removeClass('error')
+				.addClass('success');
+		}	else {
+			$parent.find('label').removeClass('top');
+			$parent.removeClass('success')
+
+			if (required) {
+				$parent.addClass('error');
+			}
+		}
+	});
+});
+  </script>
+</body>
+</html>
