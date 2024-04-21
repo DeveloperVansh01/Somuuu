@@ -4,8 +4,306 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.birthday-gift {
+  position: relative;
+}
+
+.birthday-gift:before {
+  content:"";
+  position: absolute;
+  width: 170px;
+  height:20px;
+  border-radius:50%;
+  background-color: rgba(0,0,0,0.4);
+  top:90px;
+  left:-10px;
+}
+
+input#click {
+  display: none;
+}
+
+.gift {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  background-color: #efa7a8;
+}
+
+.gift:before {
+  content:"";
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  background-color: #ffffff;
+  left:62px;
+}
+
+.gift:after {
+  content:"";
+  position: absolute;
+  box-shadow: inset 0 10px rgba(0,0,0,0.3);
+  width: 150px;
+  height: 100px;
+}
+
+.click {
+  position: absolute;
+  background-color: #efa7a8;
+  width: 170px;
+  height: 40px;
+  top:-40px;
+  left:-10px;
+  transform-origin: bottom left;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.click:before {
+  content:"";
+  position: absolute;
+  width: 25px;
+  height: 40px;
+  background-color: #ffffff;
+  left:69px;
+}
+
+.click:after {
+  content:"";
+  position: absolute;
+  width: 5px;
+  height: 0;
+  border-bottom: 30px solid #e59d9f;
+  border-top: 30px solid #efa7a8;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotate(-90deg);
+  left:65px;
+  top:-47px;
+}
+
+#click:checked + .click {
+  transform: rotate(-110deg) scaleX(0.85);
+}
+
+.wishes {
+  position: absolute;
+  transition: .5s;
+  color: #333;
+  font-size: 32px;
+  text-align: center;
+  z-index:-1;
+  left:5px;
+  top: 10px;
+}
+
+#click:checked ~ .wishes {
+  transform: translateY(-100px);
+}
+
+#click:checked ~ .sparkles {
+  display: block;
+}
+
+
+
+.sparkles {
+  position: absolute;
+  display: none;
+  top:-15px;
+  z-index:-2;
+  left:40px;
+}
+
+.spark1, .spark2, .spark3, .spark4, .spark5, .spark6 {
+  position: absolute;
+  background-color: #fee440;
+  border-radius:50%;
+  top:-9px;
+  z-index:-1;
+}
+
+.spark1 {
+  width: 8px;
+  height:8px;
+  left:30px;
+  top:-9px;
+  animation: fire 0.9s ease-in-out infinite, color 0.4s linear infinite;
+}
+
+.spark1:before {
+  content:"";
+  position: absolute;
+  width:5px;
+  height:5px;
+  top:8px;
+  left:11px;
+  background-color: #fee440;
+  border-radius:50%;
+}
+
+.spark2 {
+  width: 9px;
+  height:9px;
+  left:33px;
+  top:-5px;
+  animation: fire2 0.28s ease-in-out infinite, color 0.4s linear infinite;
+}
+
+.spark2:before {
+  content:"";
+  position: absolute;
+  width:5px;
+  height:5px;
+  top:12px;
+  left:3px;
+  background-color: #fee440;
+  border-radius:50%;
+}
+
+.spark3 {
+  width: 8.5px;
+  height:8.5px;
+  left:33px;
+  top:-5px;
+  animation: fire3 0.36s ease-in-out infinite, color2 0.4s linear infinite;
+}
+
+.spark3:before {
+  content:"";
+  position: absolute;
+  width:5px;
+  height:5px;
+  top:12px;
+  left:-1px;
+  background-color: #fee440;
+  border-radius:50%;
+}
+
+.spark4 {
+  width: 7px;
+  height:7px;
+  left:27px;
+  top:-5px;
+  animation: fire2 0.24s ease-in-out infinite, color2 0.2s linear infinite;
+}
+
+.spark5 {
+  width: 7px;
+  height:7px;
+  left:29px;
+  top:-5px;
+  animation: fire3 0.45s ease-in-out infinite, color 0.2s linear infinite;
+}
+
+.spark6 {
+  width: 6px;
+  height:6px;
+  left:29px;
+  top:-5px;
+  animation: fire 0.35s ease-in-out infinite, color2 0.2s linear infinite;
+}
+  
+@keyframes fire3 {
+  100% { transform:translateX(20px) translateY(-93px); 
+         opacity: 0.3; }
+}
+
+@keyframes fire2 {
+  100% { transform:translateX(-5px) translateY(-90px); 
+         opacity: 0.3; }
+}
+
+@keyframes fire {
+  100% { transform:translateX(-25px) translateY(-95px); 
+         opacity: 0.3; }
+}
+
+@keyframes color {
+  from {background-color: #d00000;}
+  to {background-color: #0081a7;}
+}
+
+@keyframes color2 {
+  from {background-color: #8cff00;}
+  to {background-color: #1d2d44;}
+}
+.birthday-gift{
+  position: relative;
+  top: -30px;
+  left: 10px;
+}
+#wish {
+  width: 100px;
+  height: 40px;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  background-image: url(Happy\ Birthday\ frame\ PNG.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background-size: 110%; */
+}
+#button {
+  font-family: 'luckiest guy';
+  width: 120px;
+  height: 40px;
+  position: relative;
+  left: 20px;
+  visibility: hidden;
+  background: #ffa3b9;
+  box-shadow: 0 0 10px 0 #ff76bf;
+  border-radius: 5px;
+}
+
+
+  </style>
 </head>
 <body>
-  <h1>d</h1>
+  <div class="container">
+    <div class="birthday-gift">
+      <div class="gift">
+      <input id='click' type='checkbox'>
+      <label class='click' for='click' onclick="myFunction()"></label>
+      <div class="wishes">You Got 2 wishes</div>
+           <div class="sparkles">
+          <div class="spark1"></div>
+          <div class="spark2"></div>
+          <div class="spark3"></div>
+          <div class="spark4"></div>
+          <div class="spark5"></div>
+          <div class="spark6"></div>
+        </div>
+        </div>
+  </div>
+  <a href="https://developervansh01.github.io/Somuuu/typegift.html" target="_blank">
+    <button id="button">Type Your Wish</button>
+  </a>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("button");
+      if (x.style.visibility === "hidden") {
+        x.style.display = "flex";
+      } else {
+        x.style.visibility = "visible";
+      }
+    }
+    </script>
 </body>
 </html>
