@@ -272,7 +272,13 @@ body {
   border-radius: 5px;
 }
 
-
+.rrr {
+    position: absolute;
+    top: 120px;
+    visibility: visible;
+    font-size: 15px;
+    left: 20px;
+}
   </style>
 </head>
 <body>
@@ -280,7 +286,7 @@ body {
     <div class="birthday-gift">
       <div class="gift">
       <input id='click' type='checkbox'>
-      <label class='click' for='click' onclick="myFunction()"></label>
+      <label class='click' for='click' onclick="myFunction(); myFunction2();"></label>
       <div class="wishes">You Got 2 wishes</div>
            <div class="sparkles">
           <div class="spark1"></div>
@@ -291,6 +297,7 @@ body {
           <div class="spark6"></div>
         </div>
         </div>
+        <p class="rrr">Click on Ribbon</p>
   </div>
   <a href="https://developervansh01.github.io/Somuuu/typegift.html" target="_blank">
     <button id="button">Type Your Wish</button>
